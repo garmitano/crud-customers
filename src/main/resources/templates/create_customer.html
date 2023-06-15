@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Registro de clientes</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a
+                                class="nav-link active"
+                                aria-current="page"
+                                href="#"
+                                >Inicio</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/customers}"
+                                >Listar todos</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Agregar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">Actualizar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">Borrar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <br />
+        <div class="container">
+            <div
+                class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card"
+            >
+                <h1 class="text-center">Registro de clientes</h1>
+                <div class="card-body">
+                    <form
+                        th:action="@{/customers}"
+                        th:object="${customer}"
+                        method="post"
+                    >
+                        <div class="form-group">
+                            <label for="dni">Identificacion</label>
+                            <input
+                                type="text"
+                                name="dni"
+                                th:field="*{dni}"
+                                class="form-control"
+                                required
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Nombre completo</label>
+                            <input
+                                type="text"
+                                name="name"
+                                th:field="*{fullname}"
+                                class="form-control"
+                                placeholder="Apellido y nombre"
+                                required
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Localidad</label>
+                            <input
+                                type="text"
+                                name="location"
+                                th:field="*{location}"
+                                class="form-control"
+                                placeholder="Localidad"
+                                required
+                            />
+                        </div>
+                        <br />
+                        <button class="btn btn-success">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
