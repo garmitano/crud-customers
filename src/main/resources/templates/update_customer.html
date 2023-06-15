@@ -5,16 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Editar clientes</title>
         <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
             rel="stylesheet"
-            integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
             crossorigin="anonymous"
         />
     </head>
     <body>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#">Sistema RS</a>
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -29,32 +29,20 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a
-                                class="nav-link active"
-                                aria-current="page"
-                                href="#"
-                                >Inicio</a
-                            >
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" th:href="@{/customers}"
                                 >Listar todos</a
                             >
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Agregar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled">Actualizar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled">Borrar</a>
+                            <a class="nav-link" th:href="@{/customers/new}"
+                                >Agregar</a
+                            >
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <br />
+
         <div class="container">
             <div
                 class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card"
@@ -98,7 +86,7 @@
                                 required
                             />
                         </div>
-                        <br />
+
                         <button class="btn btn-success">Guardar</button>
                     </form>
                 </div>
